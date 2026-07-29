@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIVER COMPASS by CAP｜ライバー事務所選びの無料相談メディア</title>
+<meta name="description" content="配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* ---- トップページ専用スタイル ---- */
+  .hero{
+    padding:64px 0 96px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(124,108,242,.16), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(255,90,122,.14), transparent 36%),
+      var(--mist);
+  }
+  .hero-inner{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; position:relative; z-index:2;}
+  .hero h1{ margin-bottom:24px; }
+  .hero .grad-word{ background:linear-gradient(90deg,var(--violet),var(--coral)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-sub{ font-size:17px; color:var(--muted); margin-bottom:36px; max-width:480px;}
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;}
+  .trust-list{ display:flex; gap:20px; flex-wrap:wrap; }
+  .trust-item{ display:flex; align-items:center; gap:8px; font-size:14px; color:var(--muted);}
+  .hero-visual{ position:relative; }
+  .hero-photo{
+    position:relative; aspect-ratio:4/5; border-radius:28px; overflow:hidden;
+    border:1px solid var(--border); box-shadow:0 30px 60px rgba(20,33,61,.14);
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .hero-photo::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(20,33,61,.55) 100%);
+  }
+  .floating-badge{
+    position:absolute; z-index:3; background:var(--white); border-radius:18px;
+    box-shadow:0 16px 32px rgba(20,33,61,.14); padding:14px 18px; display:flex; align-items:center; gap:10px;
+    animation:bob 4s ease-in-out infinite;
+  }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
+  .badge-top{ top:22px; left:-24px; font-weight:700; font-size:13px; }
+  .badge-bottom{ bottom:24px; right:-20px; max-width:220px; font-size:13px; line-height:1.6; animation-delay:1s; }
+  .badge-bottom .name{ font-weight:700; color:var(--navy); display:block; margin-bottom:4px; }
+  .avatar-dot{ width:36px; height:36px; border-radius:50%; overflow:hidden; flex-shrink:0; }
+  .avatar-dot img{ width:100%; height:100%; object-fit:cover; }
+  .pulse-dot{ width:9px; height:9px; border-radius:50%; background:var(--aqua); position:relative; flex-shrink:0; }
+  .pulse-dot::after{
+    content:""; position:absolute; inset:-6px; border-radius:50%; border:2px solid var(--aqua);
+    animation:pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse{ 0%{ transform:scale(.6); opacity:1;} 100%{ transform:scale(1.8); opacity:0;} }
+
+  /* Articles (moved near top) */
+  .article-tabs-row{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:8px;}
+  .article-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .article-card{ overflow:hidden; }
+  .article-thumb{ aspect-ratio:16/9; overflow:hidden; position:relative; }
+  .article-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .article-card:hover .article-thumb img{ transform:scale(1.08); }
+  .article-thumb .cat-chip{
+    position:absolute; top:12px; left:12px; background:rgba(20,33,61,.75); color:#fff; font-size:11.5px;
+    font-weight:700; padding:5px 12px; border-radius:var(--radius-btn);
+  }
+  .article-body{ padding:20px; }
+  .article-title{ font-size:16px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.5;}
+  .article-desc{ font-size:14px; color:var(--muted); margin-bottom:14px; }
+  .article-meta{ font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; border-top:1px solid var(--border); padding-top:12px;}
+  .see-all-row{ text-align:center; margin-top:36px; }
+
+  /* Pain points */
+  .pain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px; }
+  .pain-card{ padding:28px; display:flex; gap:16px; align-items:flex-start; }
+  .pain-card .ic{ width:40px; height:40px; border-radius:12px; background:rgba(124,108,242,.12); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .pain-card p{ font-size:15.5px; font-weight:500; }
+
+  /* Value / steps */
+  .value-note{ margin-top:40px; background:rgba(64,201,198,.08); border:1px solid rgba(64,201,198,.3); border-radius:16px; padding:20px 24px; font-size:14px; color:var(--ink); display:flex; gap:12px; }
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+  .step{ text-align:center; padding:0 12px; }
+  .step .num{ width:56px; height:56px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-family:"Manrope"; font-weight:800; font-size:20px; }
+  .step p.desc{ color:var(--muted); font-size:15px; margin-top:8px;}
+
+  /* App marquee */
+  .app-pill .dot.tt{ background:#000; }
+  .app-pill .dot.pc{ background:var(--coral); }
+  .app-pill .dot.ir{ background:var(--violet); }
+  .app-pill .dot.re{ background:var(--aqua); }
+  .app-pill .dot.sr{ background:var(--amber); }
+  .app-pill .dot.se{ background:#5B8DEF; }
+
+  /* Purpose entries */
+  .purpose-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:48px; }
+  .purpose-card{ padding:0; text-align:center; overflow:hidden; }
+  .purpose-photo{ aspect-ratio:1/1; overflow:hidden; }
+  .purpose-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .purpose-card:hover .purpose-photo img{ transform:scale(1.1); }
+  .purpose-card p{ font-weight:700; font-size:14.5px; padding:16px 12px; }
+
+  /* Comparison */
+  .compare-tags{ display:flex; flex-wrap:wrap; gap:12px; margin-top:40px; }
+  .tag{ background:var(--white); border:1px solid var(--border); padding:10px 20px; border-radius:var(--radius-btn); font-size:14px; font-weight:700; color:var(--navy); display:flex; align-items:center; gap:8px; }
+  .tag .sw{ width:8px; height:8px; border-radius:50%; background:var(--aqua); }
+
+  /* Stories */
+  .story-card{ padding:32px; display:flex; gap:24px; align-items:flex-start; margin-top:40px; }
+  .story-avatar{ width:64px; height:64px; border-radius:50%; overflow:hidden; flex-shrink:0; }
+  .story-avatar img{ width:100%; height:100%; object-fit:cover; }
+  .story-tag{ font-size:13px; font-weight:700; color:var(--muted); margin-bottom:8px; display:block;}
+  .story-quote{ font-size:16px; font-weight:500; line-height:1.8; }
+  .story-fine{ font-size:12.5px; color:var(--muted); margin-top:14px; }
+
+  /* About blurb */
+  .about-strip{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+  .about-photo{ border-radius:24px; overflow:hidden; aspect-ratio:16/10; }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; }
+
+  /* Final CTA */
+  .final-cta{ background:var(--navy); border-radius:32px; padding:72px 48px; text-align:center; color:#fff; position:relative; overflow:hidden; }
+  .final-cta h2{ color:#fff; margin-bottom:16px; }
+  .final-cta p{ color:rgba(255,255,255,.75); max-width:520px; margin:0 auto 32px; font-size:15.5px;}
+
+  @media (max-width:960px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; max-width:340px; margin:0 auto 24px; }
+    .pain-grid{ grid-template-columns:repeat(2,1fr); }
+    .steps{ grid-template-columns:1fr; gap:32px; }
+    .purpose-grid{ grid-template-columns:repeat(3,1fr); }
+    .article-grid{ grid-template-columns:repeat(2,1fr); }
+    .about-strip{ grid-template-columns:1fr; }
+  }
+  @media (max-width:640px){
+    .pain-grid{ grid-template-columns:1fr; }
+    .purpose-grid{ grid-template-columns:repeat(2,1fr); }
+    .article-grid{ grid-template-columns:1fr; }
+    .story-card{ flex-direction:column; }
+    .final-cta{ padding:48px 24px; }
+    .badge-top, .badge-bottom{ display:none; }
+  }
+</style>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="canonical" href="https://japancommerce.netlify.app/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LIVER COMPASS by CAP">
+<meta property="og:title" content="LIVER COMPASS by CAP｜ライバー事務所選びの無料相談メディア">
+<meta property="og:description" content="配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。">
+<meta property="og:image" content="https://picsum.photos/seed/hero-liver/700/875">
+<meta property="og:url" content="https://japancommerce.netlify.app/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIVER COMPASS by CAP｜ライバー事務所選びの無料相談メディア">
+<meta name="twitter:description" content="配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。">
+<meta name="twitter:image" content="https://picsum.photos/seed/hero-liver/700/875">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "LIVER COMPASS by CAP", "url": "https://japancommerce.netlify.app", "logo": "https://japancommerce.netlify.app/assets/favicon.svg", "description": "配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "LIVER COMPASS by CAP", "url": "https://japancommerce.netlify.app"}</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">本文へスキップ</a>
+
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span class="dot"></span>LIVER COMPASS <span class="en" style="font-weight:500;color:var(--muted);font-size:13px;">by CAP</span></a>
+    <nav class="main">
+      <a href="#beginner">初心者ガイド</a>
+      <a href="#agency">事務所を探す</a>
+      <a href="#apps">配信アプリ</a>
+      <a href="articles/index.html">記事</a>
+      <a href="#about">CAPについて</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料相談</a>
+      <button class="menu-btn" aria-label="メニュー">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#14213D" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="cta"><span id="main-content"></span>
+  <div class="blob blob-violet" style="width:340px;height:340px;top:-80px;left:-100px;"></div>
+  <div class="blob blob-coral" style="width:300px;height:300px;top:60px;right:-80px;"></div>
+  <div class="wrap hero-inner">
+    <div class="reveal in">
+      <h1>事務所選びを、<br><span class="grad-word">ひとりで悩まない。</span></h1>
+      <p class="hero-sub">配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートします。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料で相談する</a>
+        <button class="btn btn-secondary">30秒診断を試す</button>
+      </div>
+      <div class="trust-list">
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>相談無料</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>未経験OK</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>紹介前に本人確認</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-badge badge-top"><span class="pulse-dot"></span>相談受付中</div>
+      <div class="hero-photo">
+        <img src="https://picsum.photos/seed/hero-liver/700/875" alt="スマホでライブ配信する人物のイメージ" loading="eager">
+      </div>
+      <div class="floating-badge badge-bottom">
+        <div class="avatar-dot"><img src="https://picsum.photos/seed/cap-staff/72/72" alt="CAP相談員"></div>
+        <span><span class="name">CAP相談員</span>まだアプリが決まっていなくても大丈夫です。希望を伺いながら整理しますね。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES (要望により上部へ移動) -->
+<section class="section" id="articles">
+  <div class="wrap">
+    <div class="article-tabs-row reveal">
+      <div class="section-head left" style="margin-bottom:0;">
+        <span class="eyebrow">ARTICLES</span>
+        <h2>新着・人気記事</h2>
+      </div>
+      <div class="tabs" style="margin-bottom:0;">
+        <span class="tab active" data-filter="all">すべて</span>
+        <span class="tab" data-filter="beginner-income">初心者・収益</span>
+        <span class="tab" data-filter="agency-selection">事務所選び</span>
+        <span class="tab" data-filter="app-purpose">アプリ・目的</span>
+      </div>
+    </div>
+
+    <div class="article-grid" style="margin-top:32px;">
+      <a class="card article-card reveal" data-category="agency-selection" href="articles/suspicious-agency-signs.html">
+        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="https://picsum.photos/seed/suspicious-agency-signs/600/338" alt="怪しいライバー事務所の見分け方のイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">怪しいライバー事務所の見分け方</div>
+          <p class="article-desc">契約前に確認すべきポイントをチェックリストで解説します。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+      <a class="card article-card reveal" data-category="beginner-income" href="articles/tax-basics-for-livers.html">
+        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="https://picsum.photos/seed/tax-basics-for-livers/600/338" alt="税金・確定申告の基礎のイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">税金・確定申告の基礎</div>
+          <p class="article-desc">副業・本業それぞれのケースで知っておきたい申告の基本。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+      <a class="card article-card reveal" data-category="app-purpose" href="articles/tiktok-live-guide.html">
+        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="https://picsum.photos/seed/tiktok-live-guide/600/338" alt="TikTok LIVEの始め方と向いている人のイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">TikTok LIVEの始め方と向いている人</div>
+          <p class="article-desc">配信解禁の条件や向いている配信スタイルを紹介します。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+      <a class="card article-card reveal" data-category="agency-selection" href="articles/kangenritsu-explained.html">
+        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="https://picsum.photos/seed/kangenritsu-explained/600/338" alt="ライバー事務所の還元率とはのイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">ライバー事務所の還元率とは</div>
+          <p class="article-desc">還元率だけで判断しないための考え方を整理します。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+      <a class="card article-card reveal" data-category="app-purpose" href="articles/faceless-streaming.html">
+        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="https://picsum.photos/seed/faceless-streaming/600/338" alt="顔出しなしでできるライブ配信のイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">顔出しなしでできるライブ配信</div>
+          <p class="article-desc">Vライバーアプリを中心に、顔出し不要の選択肢を紹介。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+      <a class="card article-card reveal" data-category="beginner-income" href="articles/how-to-start-liver.html">
+        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="https://picsum.photos/seed/how-to-start-liver/600/338" alt="ライバーの始め方のイメージ画像"></div>
+        <div class="article-body">
+          <div class="article-title">ライバーの始め方</div>
+          <p class="article-desc">配信を始めるまでの流れを、初めての人向けに解説します。</p>
+          <div class="article-meta"><span>更新日：2026.07.29</span><span>CAP編集部</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="see-all-row reveal">
+      <a class="btn btn-secondary" href="articles/index.html">記事一覧を見る（全30本）</a>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="section" id="beginner" style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">SYMPATHY</span>
+      <h2>こんなことで迷っていませんか？</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="#7C6CF2" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#7C6CF2" stroke-width="2"/></svg></div><p>どの配信アプリが自分に合う？</p></div>
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19h16M6 15l4-6 3 4 3-5 2 7" stroke="#7C6CF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>事務所に入るメリットは？</p></div>
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="#7C6CF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>怪しい事務所をどう見分ける？</p></div>
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z" stroke="#7C6CF2" stroke-width="2"/><path d="M3 3l18 18" stroke="#7C6CF2" stroke-width="2" stroke-linecap="round"/></svg></div><p>顔出しなしでも活動できる？</p></div>
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="#7C6CF2" stroke-width="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#7C6CF2" stroke-width="2"/></svg></div><p>副業として始められる？</p></div>
+      <div class="card pain-card reveal"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 7h13M8 12h13M8 17h13M3 7h.01M3 12h.01M3 17h.01" stroke="#7C6CF2" stroke-width="2" stroke-linecap="round"/></svg></div><p>移籍や契約について相談したい</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE / STEPS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">WHY CAP</span>
+      <h2>情報を比べるだけでなく、<br>あなたの条件で一緒に選びます</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>希望をヒアリング</h3><p class="desc">配信経験、顔出し可否、目標、活動時間などを丁寧に伺います。</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>条件に合う選択肢を整理</h3><p class="desc">複数条件で比較し、あなたに合う候補だけを絞り込みます。</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>希望する事務所だけに紹介</h3><p class="desc">共有する情報は事前に確認。同意なく先へは進みません。</p></div>
+    </div>
+    <div class="value-note reveal">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M12 9v4m0 4h.01" stroke="#40C9C6" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#40C9C6" stroke-width="2"/></svg>
+      <span>CAPが提携事務所から紹介料等を受け取る場合があります。提携の有無だけで提案を決定しません。詳しくは広告掲載方針をご確認ください。</span>
+    </div>
+  </div>
+</section>
+
+<!-- APP MARQUEE -->
+<section class="section" id="apps" style="background:var(--white); padding-top:64px; padding-bottom:64px;">
+  <div class="wrap">
+    <div class="section-head left reveal">
+      <span class="eyebrow">APPS</span>
+      <h2>配信アプリから探す</h2>
+    </div>
+  </div>
+  <div class="marquee reveal">
+    <div class="marquee-track">
+      <span class="app-pill"><span class="dot tt"></span>TikTok LIVE</span>
+      <span class="app-pill"><span class="dot pc"></span>Pococha</span>
+      <span class="app-pill"><span class="dot ir"></span>IRIAM</span>
+      <span class="app-pill"><span class="dot re"></span>REALITY</span>
+      <span class="app-pill"><span class="dot sr"></span>SHOWROOM</span>
+      <span class="app-pill"><span class="dot se"></span>17LIVE</span>
+      <span class="app-pill"><span class="dot tt"></span>TikTok LIVE</span>
+      <span class="app-pill"><span class="dot pc"></span>Pococha</span>
+      <span class="app-pill"><span class="dot ir"></span>IRIAM</span>
+      <span class="app-pill"><span class="dot re"></span>REALITY</span>
+      <span class="app-pill"><span class="dot sr"></span>SHOWROOM</span>
+      <span class="app-pill"><span class="dot se"></span>17LIVE</span>
+    </div>
+  </div>
+</section>
+
+<!-- PURPOSE ENTRIES -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head left reveal">
+      <span class="eyebrow">FIND YOUR WAY</span>
+      <h2>目的から探す</h2>
+    </div>
+    <div class="purpose-grid">
+      <a class="card purpose-card reveal" href="articles/how-to-start-liver.html">
+        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-beginner/300/300" alt="未経験から始めたいのイメージ画像"></div>
+        <p>未経験から始めたい</p>
+      </a>
+      <a class="card purpose-card reveal" href="articles/side-job-liver-start.html">
+        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-sidejob/300/300" alt="副業で活動したいのイメージ画像"></div>
+        <p>副業で活動したい</p>
+      </a>
+      <a class="card purpose-card reveal" href="articles/singer-liver-path.html">
+        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-singer/300/300" alt="歌・モデル・芸能へ広げたいのイメージ画像"></div>
+        <p>歌・モデル・芸能へ広げたい</p>
+      </a>
+      <a class="card purpose-card reveal" href="articles/iriam-vliver-guide.html">
+        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-vliver/300/300" alt="Vライバーになりたいのイメージ画像"></div>
+        <p>Vライバーになりたい</p>
+      </a>
+      <a class="card purpose-card reveal" href="articles/agency-transfer-method.html">
+        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-transfer/300/300" alt="経験を活かして移籍したいのイメージ画像"></div>
+        <p>経験を活かして移籍したい</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section" id="agency" style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">COMPARE</span>
+      <h2>大切なのは、"一番有名"より"自分に合う"こと。</h2>
+    </div>
+    <div class="compare-tags reveal">
+      <span class="tag"><span class="sw"></span>初心者サポート</span>
+      <span class="tag"><span class="sw"></span>対応アプリ</span>
+      <span class="tag"><span class="sw"></span>顔出しなし</span>
+      <span class="tag"><span class="sw"></span>マネージャー制度</span>
+      <span class="tag"><span class="sw"></span>ノルマ</span>
+      <span class="tag"><span class="sw"></span>報酬・還元条件</span>
+      <span class="tag"><span class="sw"></span>案件・イベント</span>
+      <span class="tag"><span class="sw"></span>オンライン対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head left reveal">
+      <span class="eyebrow">STORIES</span>
+      <h2>相談・所属事例</h2>
+    </div>
+    <div class="card story-card reveal">
+      <div class="story-avatar"><img src="https://picsum.photos/seed/story1/200/200" alt="相談事例の相談者イメージ(匿名)"></div>
+      <div>
+        <span class="story-tag">会社員・20代／未経験</span>
+        <p class="story-quote">顔出しへの不安と活動時間を整理し、無理なく続けられる候補を比較しました。</p>
+        <p class="story-fine">※ご本人の掲載許諾を得たうえで匿名化して掲載しています。成果には個人差があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background:var(--white);">
+  <div class="wrap about-strip">
+    <div class="reveal">
+      <span class="eyebrow">ABOUT CAP</span>
+      <h2 style="margin-bottom:20px;">押し売りをしない、<br>事務所選びの相談窓口。</h2>
+      <p class="muted" style="font-size:15.5px; line-height:1.9; margin-bottom:20px;">CAPはライバー事務所の一社ではなく、相談者側に立つ案内人です。良い面だけでなく、契約期間・違約金・ノルマなど確認すべき情報も正直にお伝えします。紹介料・広告料を受け取る場合はその事実を明示し、「完全中立」「絶対に稼げる」といった事実以上の表現は使いません。</p>
+      <ul class="checklist" style="margin:0;">
+        <li>編集・監修：CAP編集部が全記事を執筆し、公開情報の事実確認を行っています</li>
+        <li>情報の確認日・出典を各記事に明記しています</li>
+        <li>広告関係（紹介料・掲載料の受領）は広告掲載方針で開示しています</li>
+        <li>内容の誤りや訂正依頼はLINEよりご連絡いただけます</li>
+      </ul>
+    </div>
+    <div class="about-photo reveal">
+      <img src="https://picsum.photos/seed/cap-office/700/440" alt="CAPの相談窓口イメージ">
+    </div>
+  </div>
+</section>
+
+<!-- KEYWORDS / TAG CLOUD -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head left reveal">
+      <span class="eyebrow">KEYWORDS</span>
+      <h2>よく検索されるキーワードから探す</h2>
+    </div>
+    <div class="tagcloud reveal">
+      <a href="articles/agency-how-to-choose-10.html">ライバー事務所 選び方</a>
+      <a href="articles/suspicious-agency-signs.html">ライバー事務所 怪しい</a>
+      <a href="articles/kangenritsu-explained.html">ライバー事務所 還元率</a>
+      <a href="articles/agency-transfer-method.html">ライバー事務所 移籍</a>
+      <a href="articles/scout-dm-check.html">ライバー スカウトDM</a>
+      <a href="articles/tax-basics-for-livers.html">ライバー 確定申告</a>
+      <a href="articles/side-job-liver-start.html">ライバー 副業 始め方</a>
+      <a href="articles/live-streaming-equipment.html">ライブ配信 機材 初心者</a>
+      <a href="articles/tiktok-live-guide.html">TikTok LIVE 始め方</a>
+      <a href="articles/pococha-guide.html">Pococha 特徴</a>
+      <a href="articles/iriam-vliver-guide.html">Vライバー なり方</a>
+      <a href="articles/reality-guide.html">REALITY アプリ 特徴</a>
+      <a href="articles/faceless-streaming.html">顔出しなし 配信 アプリ</a>
+      <a href="articles/minor-streaming-caution.html">未成年 配信 注意点</a>
+      <a href="articles/rural-liver-possibility.html">地方在住 ライバー</a>
+      <a href="articles/liver-30s-start.html">30代 ライバー 始め方</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq-list reveal" style="margin-top:40px;">
+      <div class="faq-item">
+        <div class="faq-q">相談は本当に無料ですか？<span class="plus">＋</span></div>
+        <div class="faq-a">はい、相談・ヒアリングにかかる費用は一切かかりません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">まだ配信を始めるか決めていなくても相談できますか？<span class="plus">＋</span></div>
+        <div class="faq-a">検討段階での相談も歓迎しています。まずは希望や不安をお聞かせください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">相談すると必ずどこかへ所属しなければなりませんか？<span class="plus">＋</span></div>
+        <div class="faq-a">いいえ。相談のみでの利用も可能で、無理な勧誘は行いません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どの事務所へ情報が共有されますか？<span class="plus">＋</span></div>
+        <div class="faq-a">候補提示後、共有先と共有項目を具体的に示したうえで、あらためて同意を確認します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">未成年でも相談できますか？<span class="plus">＋</span></div>
+        <div class="faq-a">相談は可能です。年齢確認のうえ、契約段階では保護者の同意が必要になる場合があります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">すでに事務所に所属していても相談できますか？<span class="plus">＋</span></div>
+        <div class="faq-a">可能です。現在の契約内容の確認を優先し、契約違反となる行動は促しません。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section">
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <h2>あなたに合う活動の始め方を、<br>一緒に整理しませんか？</h2>
+      <p>無理に所属を勧めることはありません。まずは今の希望や不安を聞かせてください。</p>
+      <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料で事務所選びを相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:16px;"><span class="dot"></span>LIVER COMPASS <span class="en" style="font-weight:500;color:rgba(255,255,255,.5);font-size:13px;">by CAP</span></div>
+        <p class="muted" style="color:rgba(255,255,255,.5);">配信を仕事にしたい人の、事務所選び相談室。</p>
+      </div>
+      <div><h4>サイトについて</h4><ul><li>運営者情報</li><li>比較・評価方針</li><li>広告・PR方針</li><li>編集方針</li></ul></div>
+      <div><h4>探す</h4><ul><li><a href="#agency">事務所を探す</a></li><li><a href="#apps">配信アプリから探す</a></li><li>目的から探す</li><li>30秒診断</li></ul></div>
+      <div><h4>サポート</h4><ul><li>よくある質問</li><li>お問い合わせ</li><li>事務所向け掲載案内</li></ul></div>
+      <div><h4>規約</h4><ul><li>プライバシーポリシー</li><li>利用規約</li><li>特定商取引法表示</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CAP. All rights reserved.</span>
+      <span>本サイトは提携事務所から広告料・紹介手数料を受け取る場合があります。</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料相談</a></div>
+
+<a class="fab-line" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener" aria-label="LINEで無料相談"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.4 7.1 8 7.8-.1.6-.5 2-.5 2.3 0 .3.2.4.4.3.2 0 2.8-1.9 3.9-2.7.4 0 .8.1 1.2.1 5.5 0 10-3.6 10-8S17.5 3 12 3z" fill="#fff"/></svg>LINEで無料相談</a>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
