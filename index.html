@@ -119,9 +119,17 @@
   .about-photo img{ width:100%; height:100%; object-fit:cover; }
 
   /* Final CTA */
-  .final-cta{ background:var(--navy); border-radius:32px; padding:72px 48px; text-align:center; color:#fff; position:relative; overflow:hidden; }
+  .final-cta{ background:var(--grad-navy); border-radius:32px; padding:72px 48px; text-align:center; color:#fff; position:relative; overflow:hidden; box-shadow:0 30px 70px rgba(20,33,61,.3); }
+  .final-cta::before{ content:""; position:absolute; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(255,90,122,.4), transparent 70%); top:-100px; left:-80px; filter:blur(10px); pointer-events:none; }
+  .final-cta::after{ content:""; position:absolute; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle, rgba(64,201,198,.32), transparent 70%); bottom:-90px; right:-60px; filter:blur(10px); pointer-events:none; }
+  .final-cta h2, .final-cta p, .final-cta .btn{ position:relative; z-index:1; }
   .final-cta h2{ color:#fff; margin-bottom:16px; }
   .final-cta p{ color:rgba(255,255,255,.75); max-width:520px; margin:0 auto 32px; font-size:15.5px;}
+  .hero-photo{ border:1px solid rgba(124,108,242,.25); }
+  .floating-badge{ border:1px solid rgba(124,108,242,.12); }
+  .purpose-photo{ position:relative; }
+  .purpose-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,33,61,0) 55%, rgba(20,33,61,.30) 100%); pointer-events:none; }
+  .about-photo{ box-shadow:0 24px 50px rgba(20,33,61,.14); }
 
   @media (max-width:960px){
     .hero-inner{ grid-template-columns:1fr; }
@@ -147,21 +155,21 @@
 <meta property="og:site_name" content="LIVER COMPASS by CAP">
 <meta property="og:title" content="LIVER COMPASS by CAP｜ライバー事務所選びの無料相談メディア">
 <meta property="og:description" content="配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。">
-<meta property="og:image" content="https://picsum.photos/seed/hero-liver/700/875">
+<meta property="og:image" content="assets/images/hero-liver.svg">
 <meta property="og:url" content="https://japancommerce.netlify.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LIVER COMPASS by CAP｜ライバー事務所選びの無料相談メディア">
 <meta name="twitter:description" content="配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。">
-<meta name="twitter:image" content="https://picsum.photos/seed/hero-liver/700/875">
+<meta name="twitter:image" content="assets/images/hero-liver.svg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "LIVER COMPASS by CAP", "url": "https://japancommerce.netlify.app", "logo": "https://japancommerce.netlify.app/assets/favicon.svg", "description": "配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートするライバー事務所相談メディアです。"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "LIVER COMPASS by CAP", "url": "https://japancommerce.netlify.app"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  {"@type": "Question", "name": "相談は本当に無料ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、相談・ヒアリングにかかる費用は一切かかりません。"}},
-  {"@type": "Question", "name": "まだ配信を始めるか決めていなくても相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "検討段階での相談も歓迎しています。まずは希望や不安をお聞かせください。"}},
-  {"@type": "Question", "name": "相談すると必ずどこかへ所属しなければなりませんか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。相談のみでの利用も可能で、無理な勧誘は行いません。"}},
-  {"@type": "Question", "name": "どの事務所へ情報が共有されますか？", "acceptedAnswer": {"@type": "Answer", "text": "候補提示後、共有先と共有項目を具体的に示したうえで、あらためて同意を確認します。"}},
-  {"@type": "Question", "name": "未成年でも相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "相談は可能です。年齢確認のうえ、契約段階では保護者の同意が必要になる場合があります。"}},
-  {"@type": "Question", "name": "すでに事務所に所属していても相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "可能です。現在の契約内容の確認を優先し、契約違反となる行動は促しません。"}}
+{"@type": "Question", "name": "相談は本当に無料ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、相談・ヒアリングにかかる費用は一切かかりません。"}},
+{"@type": "Question", "name": "まだ配信を始めるか決めていなくても相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "検討段階での相談も歓迎しています。まずは希望や不安をお聞かせください。"}},
+{"@type": "Question", "name": "相談すると必ずどこかへ所属しなければなりませんか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。相談のみでの利用も可能で、無理な勧誘は行いません。"}},
+{"@type": "Question", "name": "どの事務所へ情報が共有されますか？", "acceptedAnswer": {"@type": "Answer", "text": "候補提示後、共有先と共有項目を具体的に示したうえで、あらためて同意を確認します。"}},
+{"@type": "Question", "name": "未成年でも相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "相談は可能です。年齢確認のうえ、契約段階では保護者の同意が必要になる場合があります。"}},
+{"@type": "Question", "name": "すでに事務所に所属していても相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "可能です。現在の契約内容の確認を優先し、契約違反となる行動は促しません。"}}
 ]}</script>
 </head>
 <body>
@@ -207,10 +215,10 @@
     <div class="hero-visual">
       <div class="floating-badge badge-top"><span class="pulse-dot"></span>相談受付中</div>
       <div class="hero-photo">
-        <img src="https://picsum.photos/seed/hero-liver/700/875" alt="スマホでライブ配信する人物のイメージ" loading="eager">
+        <img src="assets/images/hero-liver.svg" alt="スマホでライブ配信する人物のイメージ" loading="eager">
       </div>
       <div class="floating-badge badge-bottom">
-        <div class="avatar-dot"><img src="https://picsum.photos/seed/cap-staff/72/72" alt="CAP相談員"></div>
+        <div class="avatar-dot"><img src="assets/images/cap-staff.svg" alt="CAP相談員"></div>
         <span><span class="name">CAP相談員</span>まだアプリが決まっていなくても大丈夫です。希望を伺いながら整理しますね。</span>
       </div>
     </div>
@@ -235,7 +243,7 @@
 
     <div class="article-grid" style="margin-top:32px;">
       <a class="card article-card reveal" data-category="agency-selection" href="articles/suspicious-agency-signs.html">
-        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="https://picsum.photos/seed/suspicious-agency-signs/600/338" alt="怪しいライバー事務所の見分け方のイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="assets/images/suspicious-agency-signs.svg" alt="怪しいライバー事務所の見分け方のイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">怪しいライバー事務所の見分け方</div>
           <p class="article-desc">契約前に確認すべきポイントをチェックリストで解説します。</p>
@@ -243,7 +251,7 @@
         </div>
       </a>
       <a class="card article-card reveal" data-category="beginner-income" href="articles/tax-basics-for-livers.html">
-        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="https://picsum.photos/seed/tax-basics-for-livers/600/338" alt="税金・確定申告の基礎のイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="assets/images/tax-basics-for-livers.svg" alt="税金・確定申告の基礎のイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">税金・確定申告の基礎</div>
           <p class="article-desc">副業・本業それぞれのケースで知っておきたい申告の基本。</p>
@@ -251,7 +259,7 @@
         </div>
       </a>
       <a class="card article-card reveal" data-category="app-purpose" href="articles/tiktok-live-guide.html">
-        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="https://picsum.photos/seed/tiktok-live-guide/600/338" alt="TikTok LIVEの始め方と向いている人のイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="assets/images/tiktok-live-guide.svg" alt="TikTok LIVEの始め方と向いている人のイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">TikTok LIVEの始め方と向いている人</div>
           <p class="article-desc">配信解禁の条件や向いている配信スタイルを紹介します。</p>
@@ -259,7 +267,7 @@
         </div>
       </a>
       <a class="card article-card reveal" data-category="agency-selection" href="articles/kangenritsu-explained.html">
-        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="https://picsum.photos/seed/kangenritsu-explained/600/338" alt="ライバー事務所の還元率とはのイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">事務所選び</span><img src="assets/images/kangenritsu-explained.svg" alt="ライバー事務所の還元率とはのイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">ライバー事務所の還元率とは</div>
           <p class="article-desc">還元率だけで判断しないための考え方を整理します。</p>
@@ -267,7 +275,7 @@
         </div>
       </a>
       <a class="card article-card reveal" data-category="app-purpose" href="articles/faceless-streaming.html">
-        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="https://picsum.photos/seed/faceless-streaming/600/338" alt="顔出しなしでできるライブ配信のイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">アプリ・目的</span><img src="assets/images/faceless-streaming.svg" alt="顔出しなしでできるライブ配信のイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">顔出しなしでできるライブ配信</div>
           <p class="article-desc">Vライバーアプリを中心に、顔出し不要の選択肢を紹介。</p>
@@ -275,7 +283,7 @@
         </div>
       </a>
       <a class="card article-card reveal" data-category="beginner-income" href="articles/how-to-start-liver.html">
-        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="https://picsum.photos/seed/how-to-start-liver/600/338" alt="ライバーの始め方のイメージ画像"></div>
+        <div class="article-thumb"><span class="cat-chip">初心者・収益</span><img src="assets/images/how-to-start-liver.svg" alt="ライバーの始め方のイメージ画像"></div>
         <div class="article-body">
           <div class="article-title">ライバーの始め方</div>
           <p class="article-desc">配信を始めるまでの流れを、初めての人向けに解説します。</p>
@@ -362,23 +370,23 @@
     </div>
     <div class="purpose-grid">
       <a class="card purpose-card reveal" href="articles/how-to-start-liver.html">
-        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-beginner/300/300" alt="未経験から始めたいのイメージ画像"></div>
+        <div class="purpose-photo"><img src="assets/images/purpose-beginner.svg" alt="未経験から始めたいのイメージ画像"></div>
         <p>未経験から始めたい</p>
       </a>
       <a class="card purpose-card reveal" href="articles/side-job-liver-start.html">
-        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-sidejob/300/300" alt="副業で活動したいのイメージ画像"></div>
+        <div class="purpose-photo"><img src="assets/images/purpose-sidejob.svg" alt="副業で活動したいのイメージ画像"></div>
         <p>副業で活動したい</p>
       </a>
       <a class="card purpose-card reveal" href="articles/singer-liver-path.html">
-        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-singer/300/300" alt="歌・モデル・芸能へ広げたいのイメージ画像"></div>
+        <div class="purpose-photo"><img src="assets/images/purpose-singer.svg" alt="歌・モデル・芸能へ広げたいのイメージ画像"></div>
         <p>歌・モデル・芸能へ広げたい</p>
       </a>
       <a class="card purpose-card reveal" href="articles/iriam-vliver-guide.html">
-        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-vliver/300/300" alt="Vライバーになりたいのイメージ画像"></div>
+        <div class="purpose-photo"><img src="assets/images/purpose-vliver.svg" alt="Vライバーになりたいのイメージ画像"></div>
         <p>Vライバーになりたい</p>
       </a>
       <a class="card purpose-card reveal" href="articles/agency-transfer-method.html">
-        <div class="purpose-photo"><img src="https://picsum.photos/seed/purpose-transfer/300/300" alt="経験を活かして移籍したいのイメージ画像"></div>
+        <div class="purpose-photo"><img src="assets/images/purpose-transfer.svg" alt="経験を活かして移籍したいのイメージ画像"></div>
         <p>経験を活かして移籍したい</p>
       </a>
     </div>
@@ -413,7 +421,7 @@
       <h2>相談・所属事例</h2>
     </div>
     <div class="card story-card reveal">
-      <div class="story-avatar"><img src="https://picsum.photos/seed/story1/200/200" alt="相談事例の相談者イメージ(匿名)"></div>
+      <div class="story-avatar"><img src="assets/images/story1.svg" alt="相談事例の相談者イメージ(匿名)"></div>
       <div>
         <span class="story-tag">会社員・20代／未経験</span>
         <p class="story-quote">顔出しへの不安と活動時間を整理し、無理なく続けられる候補を比較しました。</p>
@@ -438,7 +446,7 @@
       </ul>
     </div>
     <div class="about-photo reveal">
-      <img src="https://picsum.photos/seed/cap-office/700/440" alt="CAPの相談窓口イメージ">
+      <img src="assets/images/cap-office.svg" alt="CAPの相談窓口イメージ">
     </div>
   </div>
 </section>
