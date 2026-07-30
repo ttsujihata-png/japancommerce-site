@@ -110,7 +110,7 @@ function initQuiz() {
       title: '本格派ライバー予備軍タイプ',
       tagline: '顔出しトークで人を惹きつける、王道ライバー気質！',
       desc: '人前で話すことに抵抗がなく、リアクションや会話でファンを増やせるタイプ。まずは事務所ごとの特徴や還元率を比較して、自分に合う環境を見つけるところから始めると、デビュー後のギャップも少なくなります。',
-      image: 'assets/images/quiz-result-a.svg',
+      image: 'assets/images/quiz-result-a.jpg',
       links: [
         { href: 'articles/agency-how-to-choose-10.html', text: '事務所の選び方10のポイント' },
         { href: 'articles/liver-agency-merit-demerit.html', text: '事務所所属のメリット・デメリット' },
@@ -122,7 +122,7 @@ function initQuiz() {
       title: '変身系Vライバー適性タイプ',
       tagline: 'アバターやキャラの力で魅せる、変身願望アリの発信者タイプ！',
       desc: '顔出しは苦手でも、キャラクターやアバターの姿でなら自分を表現できるタイプ。IRIAMやReality、顔出し不要スタイルなど、自分らしく続けられるアプリ・方法から選んでいくのがおすすめです。',
-      image: 'assets/images/quiz-result-b.svg',
+      image: 'assets/images/quiz-result-b.jpg',
       links: [
         { href: 'articles/iriam-vliver-guide.html', text: 'IRIAMで始めるVライバー入門' },
         { href: 'articles/faceless-streaming.html', text: '顔出しなしで配信する方法' },
@@ -134,7 +134,7 @@ function initQuiz() {
       title: 'コツコツ副業ライバータイプ',
       tagline: '無理せず続けられる、着実な副業スタイルが向いている！',
       desc: 'スキマ時間を活かしてコツコツ積み上げるのが得意なタイプ。いきなり本業級を目指すより、副業として無理のないペースで始めて、続けながら収益の仕組みを理解していくのが向いています。',
-      image: 'assets/images/quiz-result-c.svg',
+      image: 'assets/images/quiz-result-c.jpg',
       links: [
         { href: 'articles/side-job-liver-start.html', text: '副業からライバーを始める方法' },
         { href: 'articles/liver-income-structure.html', text: 'ライバーの収入の仕組み' },
@@ -146,7 +146,7 @@ function initQuiz() {
       title: '物販・TikTok Shop系クリエイタータイプ',
       tagline: '紹介力・提案力を活かせる、物販クリエイター気質！',
       desc: 'トークよりも「モノを魅力的に伝える」ことが得意なタイプ。TikTok Shopのようなライブコマースは、この紹介力がそのまま収益に直結しやすい分野。配信と物販を組み合わせた新しい働き方にチャレンジしてみましょう。',
-      image: 'assets/images/quiz-result-d.svg',
+      image: 'assets/images/quiz-result-d.jpg',
       links: [
         { href: 'articles/tiktok-live-guide.html', text: 'TikTok LIVE配信ガイド' },
         { href: 'articles/liver-to-influencer.html', text: 'ライバーからインフルエンサーへ' },
@@ -158,7 +158,7 @@ function initQuiz() {
       title: '可能性まだまだ未知数タイプ',
       tagline: '伸びしろは無限大。相談しながら自分の適性を見つけよう！',
       desc: 'まだ何が向いているか分からなくても大丈夫。実際にライバーとして活躍している人の多くも最初は同じ気持ちでした。まずは基礎知識をチェックしつつ、専門スタッフに相談しながら自分に合うスタイルを探してみましょう。',
-      image: 'assets/images/quiz-result-e.svg',
+      image: 'assets/images/quiz-result-e.jpg',
       links: [
         { href: 'articles/liver-30s-start.html', text: '30代からのライバーデビュー' },
         { href: 'articles/how-to-start-liver.html', text: 'ライバーの始め方ガイド' },
