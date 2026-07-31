@@ -148,6 +148,34 @@
     .final-cta{ padding:48px 24px; }
     .badge-top, .badge-bottom{ display:none; }
   }
+
+  /* 2026 editorial home */
+  .hero{padding:84px 0 108px;background:transparent;}
+  .hero-inner{grid-template-columns:1fr .92fr;gap:76px;}
+  .hero h1{margin-bottom:25px;}
+  .hero .grad-word{background:linear-gradient(90deg,#ef6f91,#8d7bd8);-webkit-background-clip:text;background-clip:text;}
+  .hero-sub{font-size:16px;line-height:2;max-width:540px;margin-bottom:30px;}
+  .hero-photo{aspect-ratio:4/5;border-radius:180px 180px 32px 32px;border:10px solid rgba(255,255,255,.85);box-shadow:0 30px 80px rgba(52,38,65,.16);}
+  .hero-photo::after{background:linear-gradient(180deg,transparent 60%,rgba(23,32,51,.3));}
+  .floating-badge{border:1px solid rgba(23,32,51,.07);box-shadow:0 18px 45px rgba(39,30,49,.11);}
+  .trust-list{gap:10px 18px}.trust-item{font-size:13px;background:rgba(255,255,255,.65);border:1px solid rgba(23,32,51,.07);padding:7px 12px;border-radius:999px;}
+  .article-grid{gap:26px}.article-card{border-radius:26px;}
+  .article-thumb{aspect-ratio:16/10}.article-body{padding:22px}.article-title{font-size:17px;}
+  .article-thumb .cat-chip{background:rgba(23,32,51,.78);backdrop-filter:blur(8px);}
+  .pain-grid{gap:18px}.pain-card{border-radius:22px;padding:25px;}
+  .pain-card .ic{background:#fff0f4}.steps{gap:30px}.step .num{background:linear-gradient(135deg,#ef6f91,#8d7bd8);}
+  .purpose-grid{gap:18px}.purpose-card{border-radius:24px}.purpose-photo{aspect-ratio:4/5;}
+  .story-card{border-radius:28px;background:linear-gradient(135deg,#fff,#fff8fa);}
+  .about-photo{border-radius:30px;}
+  .final-cta{background:linear-gradient(135deg,#252c43,#3a314d);border-radius:36px;padding:82px 48px;}
+  @media(max-width:960px){.hero{padding-top:44px}.hero-inner{grid-template-columns:1fr}.hero-visual{max-width:420px;}.hero-photo{aspect-ratio:4/5;}}
+  @media(max-width:640px){
+    .hero{padding:40px 0 76px}.hero-inner{gap:38px}.hero-visual{order:0;max-width:285px;margin:4px auto 0}.hero-photo{border-width:7px;border-radius:110px 110px 25px 25px}
+    .hero h1{font-size:42px}.hero-sub{font-size:15px;line-height:1.9}.hero-actions{display:grid;grid-template-columns:1fr;margin-bottom:24px}
+    .hero-actions .btn{width:100%}.trust-list{gap:8px}.trust-item{font-size:12px}.article-card{border-radius:22px}
+    .purpose-grid{grid-template-columns:repeat(2,1fr)}.purpose-card p{padding:14px 8px;font-size:13px}
+    .final-cta{padding:52px 23px;border-radius:28px}
+  }
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://japancommerce.netlify.app/">
@@ -201,15 +229,15 @@
   <div class="wrap hero-inner">
     <div class="reveal in">
       <h1>事務所選びを、<br><span class="grad-word">ひとりで悩まない。</span></h1>
-      <p class="hero-sub">配信を始めたい人も、伸び悩んでいる人も。CAPが希望を聞き、あなたに合う事務所選びを無料でサポートします。</p>
+      <p class="hero-sub">配信を始めたい人も、今の事務所に迷っている人も。希望や不安をLINEで聞きながら、自分らしく続けられる選択肢を一緒に整理します。</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料で相談する</a>
+        <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">LINEで無料相談</a>
         <button class="btn btn-secondary js-quiz-open">30秒診断を試す</button>
       </div>
       <div class="trust-list">
         <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>相談無料</div>
-        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>未経験OK</div>
-        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>紹介前に本人確認</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>検討中でもOK</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#40C9C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>無理な勧誘なし</div>
       </div>
     </div>
     <div class="hero-visual">
@@ -437,7 +465,7 @@
     <div class="reveal">
       <span class="eyebrow">ABOUT CAP</span>
       <h2 style="margin-bottom:20px;">押し売りをしない、<br>事務所選びの相談窓口。</h2>
-      <p class="muted" style="font-size:15.5px; line-height:1.9; margin-bottom:20px;">CAPはライバー事務所の一社ではなく、相談者側に立つ案内人です。良い面だけでなく、契約期間・違約金・ノルマなど確認すべき情報も正直にお伝えします。紹介料・広告料を受け取る場合はその事実を明示し、「完全中立」「絶対に稼げる」といった事実以上の表現は使いません。</p>
+      <p class="muted" style="font-size:15.5px; line-height:1.9; margin-bottom:20px;">CAPはライバー事務所の一社ではなく、相談者側に立つ案内人です。良い面だけでなく、契約期間・違約金・ノルマなど確認すべき情報も正直にお伝えします。紹介料・広告料を受け取る場合はその事実を明示し、根拠を確認できない断定的な表現は使いません。</p>
       <ul class="checklist" style="margin:0;">
         <li>編集・監修：CAP編集部が全記事を執筆し、公開情報の事実確認を行っています</li>
         <li>情報の確認日・出典を各記事に明記しています</li>
@@ -521,7 +549,7 @@
     <div class="final-cta reveal">
       <h2>あなたに合う活動の始め方を、<br>一緒に整理しませんか？</h2>
       <p>無理に所属を勧めることはありません。まずは今の希望や不安を聞かせてください。</p>
-      <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">無料で事務所選びを相談する</a>
+      <a class="btn btn-primary" href="https://lin.ee/NdrFr7t" target="_blank" rel="noopener">LINEで無料相談する</a>
     </div>
   </div>
 </section>
